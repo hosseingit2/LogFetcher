@@ -28,7 +28,7 @@ public class FetchLogRepository {
         Random r = new Random();
         String tmpFileName = tmpPath+"/"+Math.abs(r.nextLong())+".txt";
         try (SeekableByteChannel ch = java.nio.file.Files.newByteChannel(Paths.get(filePath), StandardOpenOption.READ)) {
-            ByteBuffer bf = ByteBuffer.allocate(2);
+            ByteBuffer bf = ByteBuffer.allocate(1000000);
             int numOfBytes = 0;
             StringBuilder sb = new StringBuilder();
             String halfSentence = "";
